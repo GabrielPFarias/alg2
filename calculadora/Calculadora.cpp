@@ -1,14 +1,11 @@
-#pragma once
 #include <iostream>
 #include <string>
 #include "Calculadora.h"
 
 using namespace std;
 
-Calculadora::Calculadora(float memoria, string cor){
-    this->memoria = 0;
-    this->cor = cor;
-}
+Calculadora::Calculadora(float memoria, string cor):
+memoria(memoria), cor(cor) {}
 
 string Calculadora::get_cor() {
     return cor;
@@ -18,13 +15,12 @@ float Calculadora::get_memoria() {
     return memoria;
 }
 
-
-void Calculadora::set_cor() {
-    cor = cor;
+void Calculadora::set_cor(string cor) {
+    this->cor = cor;
 }
 
-void Calculadora::set_memoria() {
-    memoria = memoria;
+void Calculadora::set_memoria(float memoria) {
+    this->memoria = memoria;
 }
 
 float Calculadora::soma(float num1, float num2) {

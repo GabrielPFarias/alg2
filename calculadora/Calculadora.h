@@ -1,3 +1,5 @@
+#pragma once
+#include <iostream>
 #include <string>
 
 using namespace std;
@@ -7,9 +9,11 @@ class Calculadora {
         Calculadora();
         Calculadora(float, string);
         string get_cor();
-        void set_cor();
+        void set_cor(string);
+
         float get_memoria();
-        void set_memoria();
+        void set_memoria(float);
+
         float soma(float, float);
         float subtracao(float, float);
         float multiplicacao(float, float);
