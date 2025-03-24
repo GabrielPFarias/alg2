@@ -1,6 +1,12 @@
+#pragma once
+#include <iostream>
+#include <string>
+
 #include "Data.h"
 
-class Competicao: public Data {
+using namespace std;
+
+class Competicao {
     public:
         Competicao();
         Competicao(string, Data);
@@ -10,5 +16,5 @@ class Competicao: public Data {
 
     private:
         string nome;
-        Data date;
+        Data data;
 };

@@ -1,4 +1,3 @@
-#pragma once
 #include <iostream>
 #include <string>
 #include "Atleta.h"
@@ -18,11 +17,11 @@ int Atleta::get_idade(){
     return idade;
 }
 
-void Atleta::set_nome(){
+void Atleta::set_nome(string nome){
     nome = nome;
 }
 
-void Atleta::set_idade(){
+void Atleta::set_idade(int idade){
     idade = idade;
 }
 
