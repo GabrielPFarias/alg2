@@ -35,7 +35,9 @@ void Empresa::set_funcionario2(FuncionarioCaixa funcionario2){
 void Empresa::imprime_info(){
     cout << "Nome da empresa: " << nome << endl;
 
-    cout << "Funcionário 1: " << funcionario1.get_nome() << endl;
-    cout << "Funcionário 2: " << funcionario2.get_nome() << endl;
-    
+    cout << "Funcionario 1: " << endl;
+    funcionario1.imprime_info();
+    cout << "---------------" << endl;
+    cout << "Funcionario 2: " << endl;
+    funcionario2.imprime_info();
 };

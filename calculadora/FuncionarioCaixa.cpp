@@ -8,6 +8,14 @@ using namespace std;
 FuncionarioCaixa::FuncionarioCaixa(string nome, string endereco, Calculadora calc):
 nome(nome), endereco(endereco), calc(calc) {}
 
+string FuncionarioCaixa::get_nome(){
+    return nome;
+}
+
+string FuncionarioCaixa::get_endereco(){
+    return endereco;
+}
+
 void FuncionarioCaixa::set_nome(string nome){
     this->nome = nome;
 }
@@ -42,7 +50,7 @@ int FuncionarioCaixa::get_eleva_ao_cubo(int num1){
 
 void FuncionarioCaixa::imprime_info(){
     cout << "Nome: " << nome << endl;
-    cout << "Endereço: " << endereco << endl;
-    cout << "Memória: " << calc.get_memoria() << endl;
+    cout << "Endereco: " << endereco << endl;
+    cout << "Memoria: " << calc.get_memoria() << endl;
     cout << "Cor: " << calc.get_cor() << endl;
 }
