@@ -4,10 +4,10 @@
 
 using namespace std;
 
-int main(){
-    
+int main() {
+
     Pais Brasil("321", "Brazil", 456789, 789.123);
-    Pais Argentina("111", "Brasil", 123, 456.12);
+    Pais Argentina("111", "Argentina", 123, 456.12);
 
     /**
     Brasil.set_codIso("123");
@@ -30,7 +30,12 @@ int main(){
 
     Brasil.adicionaPaisVizinho(&Argentina);
 
-    cout << Brasil.retornaPaisesVizinhos() << endl;
+
+    Pais* vizinhos = Brasil.retornaPaisesVizinhos();
+
+    for (int i = 0; i < 1; i++) {
+        cout << vizinhos[i].get_nome() << endl;
+    };
 
     return 0;
 }
