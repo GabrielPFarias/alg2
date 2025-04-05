@@ -15,8 +15,8 @@ class Data {
         string get_dia();
         string get_mes();
         string get_ano();
-        void set_dia();
-        void set_mes();
-        void set_ano();
+        void set_dia(string);
+        void set_mes(string);
+        void set_ano(string);
         void imprime_data();
 };

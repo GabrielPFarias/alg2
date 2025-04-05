@@ -7,14 +7,15 @@
 using namespace std;
 
 class Competicao {
+    private:
+        string nome;
+        Data data;
+    
     public:
         Competicao();
         Competicao(string, Data);
         string get_nome();
         string get_data();
         void set_nome(string nome);
-
-    private:
-        string nome;
-        Data data;
+        void imprime_data();
 };

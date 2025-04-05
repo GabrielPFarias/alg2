@@ -5,8 +5,12 @@
 
 using namespace std;
 
-Nadador::Nadador(Atleta atleta, string categoria):
-Atleta(atleta.get_nome(), atleta.get_idade()), categoria(categoria) {}
+Nadador::Nadador(Atleta atleta, string categoria){
+    this->nome = atleta.get_nome();
+    this->idade = atleta.get_idade();
+    this->categoria = categoria;
+}
+
 
 string Nadador::get_categoria(){
     return categoria;

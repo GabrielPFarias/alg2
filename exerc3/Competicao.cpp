@@ -16,3 +16,7 @@ string Competicao::get_nome(){
 void Competicao::set_nome(string nome){
     nome = nome;
 };
+
+void Competicao::imprime_data(){
+    cout << "Data: " << data.get_dia() << "/" << data.get_mes() << "/" << data.get_ano() << endl;
+}

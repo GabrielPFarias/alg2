@@ -12,12 +12,13 @@ int main() {
 
     Atleta Gabriel("Gabriel", 22);
 
-    Data Date("21", "03", "2025");
+    Data Date("04", "04", "2025");
 
     Competicao Comp("Libertadores", Date);
     Comp.set_nome("Brasileiro");
 
     Nadador pessoa1(Gabriel, "100m");
+    Comp.imprime_data();
     pessoa1.imprime_info();
 
     return 0;

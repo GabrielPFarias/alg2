@@ -4,6 +4,11 @@
 
 using namespace std;
 
+Atleta::Atleta(){
+    nome = "";
+    idade = 0;
+}
+
 Atleta::Atleta(string nome, int idade){
     this->nome = nome;
     this->idade = idade;
