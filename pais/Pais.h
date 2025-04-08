@@ -16,9 +16,12 @@ public:
     void set_populacao(long);
     void set_dimensao(double);
     double get_densidade();
+    int get_qtdPaisesVizinhos();
     bool verificaPaisIgual(Pais);
     void adicionaPaisVizinho(Pais*);
-    Pais* retornaPaisesVizinhos();
+    Pais* getPaisesVizinhos();
+    bool retornaPaisVizinho(Pais);
+    Pais* retornaVizinhosEmComum(Pais*, int&);
 
 private:
     string codIso;

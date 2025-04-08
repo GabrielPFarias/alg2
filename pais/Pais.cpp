@@ -20,7 +20,7 @@ Pais::Pais(string codIso, string nome, long populacao, double dimensao) {
     this->populacao = populacao;
     this->dimensao = dimensao;
     this->vizinhos = new Pais * [40];
-    this->qtdPaisesVizinhos = qtdPaisesVizinhos;
+    this->qtdPaisesVizinhos = 0;
 }
 
 string Pais::get_codIso() {
@@ -41,6 +41,10 @@ double Pais::get_dimensao() {
 
 double Pais::get_densidade() {
     return populacao / dimensao;
+}
+
+int Pais::get_qtdPaisesVizinhos(){
+    return qtdPaisesVizinhos;
 }
 
 void Pais::set_codIso(string codIso) {
@@ -68,7 +72,19 @@ void Pais::adicionaPaisVizinho(Pais* pais) {
     qtdPaisesVizinhos += 1;
 }
 
-Pais* Pais::retornaPaisesVizinhos() {
+bool Pais::retornaPaisVizinho(Pais pais2) {
+    string nome_pais2 = pais2.get_nome();
+
+    for (int i = 0; i < qtdPaisesVizinhos; i++) {
+        string nome_pais1 = vizinhos[i]->get_nome();
+        if(nome_pais2 == nome_pais1){ 
+            return true;}
+    }
+
+    return false;
+}
+
+Pais* Pais::getPaisesVizinhos() {
     Pais* retorno = new Pais[40];
 
     for (int i = 0; i < qtdPaisesVizinhos; i++) {
@@ -76,4 +92,27 @@ Pais* Pais::retornaPaisesVizinhos() {
     }
 
     return retorno;
+}
+
+Pais* Pais::retornaVizinhosEmComum(Pais* pais2, int& qtdVizinhosComum){
+    Pais* pais1_vizinhos = this->getPaisesVizinhos();
+    int pais1_qtdVizinhos = this->get_qtdPaisesVizinhos();
+
+    Pais* pais2_vizinhos = pais2->getPaisesVizinhos();
+    int pais2_qtdVizinhos = pais2->get_qtdPaisesVizinhos();
+    
+    Pais* vizinhosEmComum = new Pais[40];
+    qtdVizinhosComum = 0;
+
+    for(int i=0; i<pais1_qtdVizinhos; i++){
+        for(int j=0; j<pais2_qtdVizinhos; j++){
+            if(pais1_vizinhos[i].get_nome() == pais2_vizinhos[j].get_nome()){
+                vizinhosEmComum[qtdVizinhosComum] = pais1_vizinhos[i];
+                qtdVizinhosComum++;
+                break;
+            }
+        }
+    }
+
+    return vizinhosEmComum;
 }
