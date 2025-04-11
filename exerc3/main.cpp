@@ -2,24 +2,35 @@
 #include <string>
 
 #include "Atleta.h"
-#include "Data.h"
 #include "Competicao.h"
+#include "Corredor.h"
+#include "Data.h"
+#include "InformacoesAtleta.h"
 #include "Nadador.h"
 
 using namespace std;
 
-int main() {
+int main() {    
+    Data hoje("10", "04", "2025");
+    Competicao competicao_corredor("TTT", hoje);
 
-    Atleta Gabriel("Gabriel", 22);
+    Data ano_passado("10", "04", "2024");
+    Competicao competicao_2("Outra", ano_passado);
 
-    Data Date("04", "04", "2025");
+    Nadador nadador1("Gabriel", 22, "profissional");
+    Corredor corredor1("Percival", 88, 65.4, &competicao_corredor);
 
-    Competicao Comp("Libertadores", Date);
-    Comp.set_nome("Brasileiro");
+    InformacoesAtleta info_atleta;
+    /*
+    info_atleta.imprime_exclusivos_atleta(&nadador1);
+    info_atleta.imprime_exclusivos_atleta(&corredor1);
 
-    Nadador pessoa1(Gabriel, "100m");
-    Comp.imprime_data();
-    pessoa1.imprime_info();
+    corredor1.set_competicao(&competicao_2);
+    
+    corredor1.imprime_info();
+    */
+    info_atleta.imprime_informacoes_atleta(&nadador1);
 
+    
     return 0;
 }

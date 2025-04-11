@@ -5,9 +5,8 @@
 
 using namespace std;
 
-Nadador::Nadador(Atleta atleta, string categoria){
-    this->nome = atleta.get_nome();
-    this->idade = atleta.get_idade();
+Nadador::Nadador(string nome, int idade, string categoria)
+: Atleta(nome, idade){
     this->categoria = categoria;
 }
 

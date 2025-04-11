@@ -8,11 +8,12 @@ using namespace std;
 
 class Nadador: public Atleta {
     private:
+        string nome;
+        int idade;
         string categoria;
 
     public:
-        Nadador();
-        Nadador(Atleta, string);
+        Nadador(string, int, string);
         string get_categoria();
         void set_categoria(string);
         void imprime_info();

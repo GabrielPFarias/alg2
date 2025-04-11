@@ -6,6 +6,11 @@ using namespace std;
 #include "Competicao.h"
 #include "Data.h"
 
+Competicao::Competicao(){
+    nome = "";
+    data = Data();
+}
+
 Competicao::Competicao(string nome, Data data):
 nome(nome), data(data) {}
 
